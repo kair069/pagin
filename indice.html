@@ -1,0 +1,584 @@
+
+
+
+<!DOCTYPE HTML >
+<HTML lang="en">
+<html lang="en">
+<HEAD>
+    <TITLE>Tablas Horizontales</TITLE>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <STYLE>
+            /* body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f0f0f0;
+                    color: #333;
+                } */
+            body {
+                font-family: Arial, sans-serif;
+                background-image: url('');
+                background-size: cover;
+                /* Para cubrir todo el área */
+                background-repeat: no-repeat;
+                /* Para que no se repita la imagen */
+                background-position: center;
+                /* Para centrar la imagen */
+                color: #333;
+            }
+    
+            h1 {
+                color: #002659;
+            }
+    
+            h2 {
+                color: #203764;
+            }
+    
+            th {
+                background-color: rgb(0, 37, 89);
+                color: #fff;
+                padding: 10px;
+            }
+    
+            td {
+                padding: 10px;
+            }
+    
+            .bonus-table {
+                border-collapse: collapse;
+                width: 80%;;
+                /* Reducir el ancho al 50% */
+                margin-bottom: 20px;
+                height: 30%;
+                /*margen centrado*/
+                margin: 0 auto; /* Centrar horizontalmente */
+            }
+    
+            .bonus-table td,
+            .bonus-table th {
+                text-align: left;
+            }
+    
+            .bonus-table .highlight {
+                color: {{Color_notificacion_cartera}};
+
+            }
+
+            .bonus-table .micro {
+                /* color: {{ color_microempresa_1}}; */
+                color: {{ nueva_color}};
+                
+            }
+
+            .bonus-table .cliente1 {
+                /* color: {{ color_microempresa_1}}; */
+                color: {{ color_cliente1}};
+                
+            }
+
+           
+
+    
+            .center {
+                text-align: center;
+            }
+    
+            /* Estilo de borde solo para la tabla del bono */
+            .bonus-table-bordered td,
+            .bonus-table-bordered th {
+                border: 3px solid #0b5394;
+            }
+
+            /* Modificar el ancho de la tabla de datos */
+            .datos-table {
+                width: 100%;
+            }
+        </STYLE>   
+</HEAD>
+
+<BODY>
+    <CENTER>
+        <H1>¡Hola {{nombre_reverso_Cartera_title}}, querido Analista de créditos de la Caja Arequipa!</H1>
+        <P>
+            <FONT SIZE="5">¡Espero que estés bien! Hoy te proporcionaré detalles sobre tu Bono Variable: Como
+                <STRONG style="color: rgb(0, 37, 89)">{{ nueva_columna_antiguedad }}</STRONG> de la categoría
+                <STRONG style="color: rgb(0, 37, 89)">{{categoria_Correcta}}</STRONG>, estás a punto de descubrir tu potencial de
+                bonificación.
+            </FONT>
+        </P>
+    </CENTER>
+
+    <HR>
+
+    <!-- Repetir la tabla 4 veces más -->
+    <TABLE BORDER="0" WIDTH="2000">
+        <TR>
+            <!-- Contenido de las celdas de la tabla -->
+            <TD valign="top">
+                <center><H2>Bono Cartera</H2></center>
+                <TABLE  CLASS="bonus-table bonus-table-bordered datos-table">
+                    <TR>
+                        <TH>Descripción y Montos</TH>
+                    </TR>
+                    <TR>
+                        <TD>
+                            
+                            
+                            <strong>Crecimiento Mínimo (CM) Para Comisión y Bono (B) Por Cumplimiento Del Mínimo:</strong> <br>
+                            <strong>CM = S/. {{ meta_saldo }}</strong><br>
+                            <strong>B = S/. {{Bono_por_cumplimiento_minim_Actualizado6}}</strong>
+                            <!-- <strong>B = S/. {{pago_cumplimiento_saldo}}</strong> -->
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD><strong style="color: #203764">Monto de Cartera Actual:</strong> <br>
+                            <strong>S/.{{ saldo_cartera1 }}</strong>
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD><strong style="color: #203764">Monto de Cartera Inicial:</strong> <br>
+                            <strong>S/.{{ saldo_mes_anterior1 }}</strong>
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD><strong style="color: #203764">Crecimiento de Cartera:</strong> <br>
+                            <strong>S/. {{ crecimiento_saldo }}</strong> <br>
+                            <i>(Monto Cartera Actual - Inicial)</i>
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD class="highlight"><strong>Avance Cumplimiento Para Comisión:</strong> <br>
+                            <!-- <strong>{{ cumplimiento_saldo }} % {{ mensaje_cartera1}}</strong> -->
+                            <strong>{{ resultado_cumplimiento_cartera1 }} % {{ mensaje_cartera1}}</strong>
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD class="highlight"><strong>Excedente Cumplimiento Mínimo Comisión:</strong> <br>
+                            <strong>Tu Excedente es S/. {{ excedente_saldo }}</strong>
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD class="highlight"><strong>Bono Por Exceder Cumplimiento Mínimo:</strong> <br>
+                            <strong>S/.{{ pago_excedente_saldo }}</strong> <br>
+                            <i>S/. {{ excedente_saldo }} x {{ porcentaje_del_excedente }}% por avance cumplimiento para Comision {{nueva_columna_mensaje2_cartera}}</i>
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD class="highlight"><strong>Bono Total:</strong> <br>
+                            <strong>S/. {{ Pago_Cartera_Incluye_Tope }}</strong> <br>
+                            <i>Bono Por Cumplimiento Del Mínimo + Bono Por Exceder Cumplimiento Mínimo</i>
+                        </TD>
+                    </TR>
+                </TABLE>
+            </TD>
+            <!-- <TD valign="top">
+                <H2>Bono 2: MicroEmpresa</H2>
+                <TABLE BORDER="1">
+                    <TR>
+                        <TH>Descripción</TH>
+                        <TH>Monto</TH>
+                    </TR>
+                    <TR>
+                        <TD><strong>Tu Monto Total de Desembolsos es :</strong></TD>
+                        <TD>S/. {{ MONTO_TOTAL_DESEMBOLSO }}</TD>
+                    </TR>
+                    <TR>
+                        <TD><strong>Tu Monto de Desembolsos Micro es:</strong></TD>
+                        <TD>S/. {{ MONTO_DESEMBOLSADO_MICRO }}</TD>
+                    </TR>
+                    <TR>
+                        <TD><strong>Tu Porcentaje Mínimo para Comisionar</strong><br>como {{ estado_analista }} y
+                            <br> {{ categoria_de_analista }}<br>Esta es el Porcentaje al que debes llegar<br>para
+                            recibir el bono<br>Porcentaje Mínimo:
+                        </TD>
+                        <TD>{{ porcentaje_microempresa_por_100 }}%</TD>
+                    </TR>
+                    <TR>
+                        <TD><strong>Tu porcentaje de tus <br> Desembolsos que te<br>Corresponde es</strong> :</TD>
+                        <TD>S/. {{ MONTO_DESEMBOLSADO_MICRO }} ÷ <br> S/. {{ MONTO_TOTAL_DESEMBOLSO }} * <br> 100 = {{
+                            por_MICROEMPRESA }} %</TD>
+                    </TR>
+                    <TR bgcolor="#BDE859">
+                        <TD><strong>Bono Por Cumplimiento <br> del Mínimo:</strong><br>Tu {{ por_MICROEMPRESA }}% <br>
+                            {{ superacion_microempresa666 }} a <br>{{ porcentaje_microempresa_por_100 }}%</TD>
+                        <TD>S/. {{ bono_desembolso_micro }}</TD>
+                    </TR>
+                    <TR>
+                        <TD><strong>Analisis:</strong></TD>
+                        <TD>{{ comentario_MICROEMPRESA }}</TD>
+                    </TR>
+                    <TR>
+                        <TD><strong>Explicacion:</strong></TD>
+                        <TD>S/. {{ MONTO_DESEMBOLSADO_MICRO }} <br> corresponden al {{ por_MICROEMPRESA }}% <br> de tus
+                            Desembolsos</TD>
+                    </TR>
+                </TABLE>
+
+            </TD> -->
+
+            <TD valign="top">
+                <center><H2>Bono Microempresa</H2></center>
+                <TABLE  CLASS="bonus-table bonus-table-bordered datos-table">
+                    <TR>
+                        <TH>Descripción y Montos</TH>
+                    </TR>
+                    <TR>
+                        <TD>
+                            <strong>Porcentaje Minimo para comision (PM) y Bono (B) Por Cumplimiento del Minimo:</strong><br>
+                            <strong>PM =  {{ porcentaje_microempresa_por_100 }}%</strong><br>
+                            <strong>B = S/. {{Columna_BonMicro}}</strong>
+                        </TD>
+                    </TR>
+                    <!-- ORIGINAL ALEX -->
+                    <!-- <TR>
+                        <TD>
+                            <strong>Monto Total Desembolsos Mes:</strong><br>
+                            <strong> S/. {{ MONTO_TOTAL_DESEMBOLSO }}</strong>
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD>
+                            <strong>Monto Desembolsos Micro Mes :</strong><br>
+                            <strong> S/. {{ MONTO_DESEMBOLSADO_MICRO }}</strong>
+                        </TD>
+                    </TR> -->
+                    <!-- MODIFICACION DAYANA -->
+                    <TR>
+                        <TD>
+                            <strong>Monto Total Desembolsos Mes:</strong><br>
+                            <strong> S/. {{ MONTO_TOTAL_DESEMBOLSO_3 }}</strong>
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD>
+                            <strong>Monto Desembolsos Micro Mes:</strong><br>
+                            <strong> S/. {{ MONTO_DESEMBOLSADO_MICRO_3 }}</strong>
+                        </TD>
+                    </TR>
+
+
+
+
+
+
+
+
+
+                    <!-- <TR> ORIGNAL ALEX 
+                        <TD>
+                            <strong>Porcentaje Desembolsos Micro :</strong><br>
+                            <strong>{{ por_MICROEMPRESA }}%</strong><br>
+                            <i>(Desembolsos Micro / Desembolsos Mes</i>
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD class="micro">
+                            <strong>Avance Cumplimiento para Comision :</strong><br>
+                            {{ diferencia_microempresa_1_2 }}% {{ mensaje_microempresa_1 }}
+                        </TD>
+                    </TR> -->
+
+
+                    <TR>
+                        <TD>
+                            <strong>Porcentaje Desembolsos Micro:</strong><br>
+                            <strong>{{ por_MICROEMPRESA }}%</strong><br>
+                            <i>(Desembolsos Micro / Desembolsos Mes)</i>
+                        </TD>
+                    </TR>
+
+                    <TR>
+                        <TD class="micro">
+                            <strong>Avance Cumplimiento para Comision:</strong><br>
+                            <strong>{{ diferencia_microempresa_1_2 }}% {{ mensaje_microempresa_2 }} </strong>
+                        </TD>
+                    </TR> 
+
+                    <!-- <TR>
+                        <TD class="micro">
+                            <strong>Bono Total :</strong><br>
+                            S/. {{ bono_desembolso_micro }}
+                            <br>
+                            <i>Recuerda que es necesario alcanzar  el bono Cartera para recibir este bono</i>
+                        </TD>
+                    </TR> -->
+
+                    <TR>
+                        <TD class="micro">
+                            <strong>Bono Total:</strong><br>
+                            <strong>S/. {{ bono_desembolso_micro }}</strong><br>
+                            <i>{{nueva_columna_MENSAJE_MICR}}</i>
+
+                            <!-- {% if bono_desembolso_micro == 0 %}
+                                <br>
+                                <i>Recuerda que es necesario alcanzar el bono Cartera para recibir este bono</i>
+                            {% endif %} -->
+                        </TD>
+                    </TR>
+                    
+
+
+
+                    <!-- <TR>
+                        <TD>
+                            <strong>Tu Monto Total de Desembolsos es :</strong><br>
+                            S/. {{ MONTO_TOTAL_DESEMBOLSO }}
+                        </TD>
+                    </TR> -->
+                    <!-- <TR>
+                        <TD>
+                            <strong>Tu Monto de Desembolsos Micro es:</strong><br>
+                            S/. {{ MONTO_DESEMBOLSADO_MICRO }}
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD>
+                            <strong>Tu Porcentaje Mínimo para Comisionar</strong><br>
+                            como {{ estado_analista }} y {{ categoria_de_analista }}<br>
+                            Esta es el Porcentaje al que debes llegar<br>
+                            para recibir el bono<br>
+                            Porcentaje Mínimo:<br>
+                            {{ porcentaje_microempresa_por_100 }} %
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD>
+                            <strong>Tu porcentaje de tus Desembolsos que te Corresponde es :</strong><br>
+                            S/. {{ MONTO_DESEMBOLSADO_MICRO }} ÷ <br>
+                            S/. {{ MONTO_TOTAL_DESEMBOLSO }} * <br>
+                            100 = {{ por_MICROEMPRESA }} %
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD bgcolor="#BDE859">
+                            <strong>Bono Por Cumplimiento del Mínimo:</strong><br>
+                            Tu {{ por_MICROEMPRESA }}% {{ superacion_microempresa666 }} a {{ porcentaje_microempresa_por_100 }}%<br>
+                            S/. {{ bono_desembolso_micro }}
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD>
+                            <strong>Analisis:</strong><br>
+                            {{ comentario_MICROEMPRESA }}
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD>
+                            <strong>Explicacion:</strong><br>
+                            S/. {{ MONTO_DESEMBOLSADO_MICRO }} <br>
+                            corresponden al {{ por_MICROEMPRESA }}% <br>
+                            de tus Desembolsos
+                        </TD>
+                    </TR> -->
+                </TABLE>
+            </TD>
+            <TD valign="top">
+                <center><H2>Bono Clientes</H2></center>
+                <TABLE CLASS="bonus-table bonus-table-bordered datos-table">
+                    <TR>
+                        <TH>Descripción y Montos</TH>
+                    </TR>
+                    <TR>
+                        <TD>
+                            <strong>Cantidad Minimo para comision (CM) y Bono (B) Por Cumplimiento del Minimo:</strong><br>
+                            <strong>CM = {{ meta_clientes }} CLT</strong><br>
+                            <strong>B = S/. {{ faltante_bono_meta }}</strong>
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD>
+                            <strong>Cantidad de Clientes Nuevos:</strong><br>
+                            {{ crecimiento_clientes }} CLT
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD class="cliente1">
+                            <strong >Avance Cumplimiento Para Comisión:</strong><br>
+                            {{ faltante_porcentaje_avance_cliente }}% {{ condicion1_clientes }}
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD class="cliente1">
+                            <strong >Excedente Cumplimiento Mínimo Comisión:</strong><br>
+                            Tu Excedente es {{ resta_clientes_excedente }} CLT
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD class="cliente1">
+                            <strong >Bono Por Exceder Cumplimiento Mínimo:</strong><br>
+                            S/. {{ bono_clientesase }}<br>
+                            {{ resta_clientes_excedente }} CLT x S/. {{ condicion_clientesbono }} por avance cumplimiento para Comision {{ intervalo_porcen }}
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD class="cliente1">
+                            <strong >Bono Total:</strong><br>
+                            S/. {{ pago_cumplimiento_clientes }}
+                        </TD>
+                    </TR>
+                </TABLE>
+            </TD>
+            
+           
+
+            <!-- codigo juan carlos -->
+            <TD valign="top">
+                <center><H2>Bono Retencion</H2></center>
+                <TABLE  CLASS="bonus-table bonus-table-bordered datos-table">
+                    <TR>
+                        <TH>Descripción y Montos</TH>
+                    </TR>
+                    <TR>
+                        <TD>
+                            <strong>Cantidad de Clientes Retenidos:</strong> <br>
+                            {{ monto_retenidos }} Clientes
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD>
+                            <strong>Base Clientes a Retener:</strong> <br>
+                            {{ base_retencion }} <br>
+                            <i>Mínimo 5 clientes en base de retención para prindar el Bono</i>   <br>
+                            <i>El pago de retención se da siempre y cuando tengas crecimiento de clientes en el mes </i>
+                        </TD>
+                    </TR>
+                    <!-- <TR>
+                        <TD>
+                            <strong>Mínimo 5 clientes en base de retención para prindar el Bono</strong>
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD>
+                            <strong>El pago de retención se da siempre y cuando tengas crecimiento de clientes en el mes</strong>
+                        </TD>
+                    </TR> -->
+                    <TR>
+                        <TD >
+                            <strong>Avance Cumplimiento Para Comisión:</strong> <br>
+                            {{ porcentaje_de_retencion }}% ¡Lo cumpliste!
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD>
+                            <strong>Cantidad Mínima para comisión (CM) y Bono (B) Por Cumplimiento:</strong> <br>
+                            CM = {{ Cantidad_Minima_para_Retener }} Clientes <br>
+                            "B = <br>
+                            <i>Retención entre 60 - 70% = S/. 60% - 70%</i> <br>
+                            <i>Retención entre 70 - 85% = S/. 70% -85%</i> <br>
+                            <i>Retención entre +85 % = S/. 85%</i> <br>
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD>
+                            <strong>% Clientes Alto Valor Retenidos:</strong> <br>
+                            Monto {{ monto_retencion_2 }} <br>
+                            {{ porcentaje_retencion_2 }}% CAV retenidos <br>
+                            <i>Si la retención de Cliente de Alto Valor (CAV) es mayor a 65%, se duplica el monto (CAV: Premium Oro, Plata y Bronce)</i>
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD>
+                            <strong>Bono Por Total por Retención:</strong> <br>
+                            S/.{{ Bono_Por_Retención }}
+                        </TD>
+                    </TR>
+                </TABLE>
+            </TD>
+            
+
+
+            <!-- <TD valign="top">
+                <H2>Bono 4: Bono retencion</H2>
+                <TABLE BORDER="1">
+                    <TR>
+                        <TH>Descripción</TH>
+                        <TH>Monto</TH>
+                    </TR>
+                    <TR>
+                        <TD><strong>Tu Cartera de clientes es de:</strong></TD>
+                        <TD>{{base_retencion}} CLT</TD>
+                    </TR>
+                    <TR>
+                        <TD><strong>Tu Monto de Clientes <br> retenidos de tu Cartera es:</strong></TD>
+                        <TD>{{monto_retenidos}} CLT</TD>
+                    </TR>
+                    <TR>
+                        <TD><strong>Tu Porcentaje de Retención que te Corresponde es de:</strong></TD>
+                        <TD>({{monto_retenidos}} CLT / {{base_retencion}} CLT) x 100 = {{porcentaje_de_retencion}}%</TD>
+                    </TR>
+                    <TR>
+                        <TD><strong>Tu porcentaje <br> debe estar en este rango:</strong></TD>
+                        <TD>Rango : {{Rango_Retencion}}</TD>
+                    </TR>
+                    <TR bgcolor="#BDE859">
+                        <TD><strong>Según tu Porcentaje y tu Categoría te Corresponde de Bono:</strong></TD>
+                        <TD>S/. {{Bono_Retencion}}.00</TD>
+                    </TR>
+                    <TR>
+                        <TD><strong>Tu Cartera de Clientes CAV es:</strong></TD>
+                        <TD>{{base_retencion_2}} CLT</TD>
+                    </TR>
+                    <TR>
+                        <TD><strong>Tu Cantidad de Clientes CAV Retenidos son:</strong></TD>
+                        <TD>{{monto_retencion_2}} CLT</TD>
+                    </TR>
+                    <TR>
+                        <TD><strong>Tu porcentaje CAV:</strong></TD>
+                        <TD>({{monto_retencion_2}} CLT / {{base_retencion_2}} CLT) x 100% = {{porcentaje2}}%</TD>
+                    </TR>
+                    <TR bgcolor="#BDE859">
+                        <TD><strong>Tu Bono por Cumplimiento de Retención es:</strong></TD>
+                        <TD>S/. {{pago_cumplimiento_retencion}}</TD>
+                    </TR>
+                </TABLE>
+
+            </TD> -->
+            <TD valign="top">
+                <H2>Bono 5: Bono Carteras al Dia</H2>
+                <TABLE BORDER="1">
+                    <TR>
+                        <TH>Descripción</TH>
+                        <TH>Monto</TH>
+                    </TR>
+                    <TR>
+                        <TD><strong>Saldo Capital de Tu Cartera:</strong></TD>
+                        <TD>S/. {{saldo_cartera_cartera_al_dia}}</TD>
+                    </TR>
+                    <TR>
+                        <TD><strong>Cuotas Canceladas al día de tu Cartera:</strong></TD>
+                        <TD>S/. {{Saldo_Cartera_al_dia_sin_mora}}</TD>
+                    </TR>
+                    <TR>
+                        <TD><strong>Tu Porcentaje de Retencion que te Corresponde es de:</strong></TD>
+                        <TD>Porcentaje = S/. {{Saldo_Cartera_al_dia_sin_mora}} / S/. {{saldo_cartera_cartera_al_dia}} x
+                            100% = {{Porcentaje_Cartera_al_dia}}%</TD>
+                    </TR>
+                    <TR>
+                        <TD><strong>El Rango donde se encuentra tu porcentaje {{Porcentaje_Cartera_al_dia}}% Es
+                                este:</strong></TD>
+                        <TD>{{intervalo_cartera_al_dia}}</TD>
+                    </TR>
+                    <TR bgcolor="#BDE859">
+                        <TD><strong>Sugerencia:</strong></TD>
+                        <TD>{{superacion_cartera_al_dia}}</TD>
+                    </TR>
+                    <TR>
+                        <TD><strong>Bonificación de Cartera al día que te corresponde:</strong></TD>
+                        <TD>S/. {{Pago_Cartera_al_dia_sin_mora}}</TD>
+                    </TR>
+                </TABLE>
+
+            </TD>
+        </TR>
+    </TABLE>
+
+    <HR>
+
+    <CENTER>
+        <P>
+            <FONT SIZE="5"><STRONG>Total:</STRONG> <!-- Aquí puedes insertar el total --> </FONT>
+        </P>
+    </CENTER>
+</BODY>
+
+</HTML>
